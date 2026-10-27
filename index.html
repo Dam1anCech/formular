@@ -19,8 +19,8 @@
       <input id="email" name="email" type="email" placeholder="vas@email.cz" required>
 
       <label for="topic">Téma zprávy</label>
-      <select id="topic" name="topic">
-        <option value="">Vyberte téma</option>
+      <select id="topic" name="topic" class="placeholder">
+        <option value="" disabled selected hidden>Vyberte téma</option>
         <option value="dotaz">Obecný dotaz</option>
         <option value="spoluprace">Spolupráce</option>
         <option value="jine">Jiné</option>
@@ -49,5 +49,18 @@
       <button type="submit">Odeslat zprávu</button>
     </form>
   </main>
+  <script>
+    const topicSelect = document.querySelector("#topic");
+
+    topicSelect.addEventListener("change", () => {
+      topicSelect.classList.remove("placeholder");
+    });
+
+    topicSelect.addEventListener("blur", () => {
+      if (!topicSelect.value) {
+        topicSelect.options[0].textContent = "";
+      }
+    });
+  </script>
 </body>
 </html>
