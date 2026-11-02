@@ -21,6 +21,19 @@ body {
   box-shadow: 0 8px 24px rgb(15 23 42 / 10%);
 }
 
+.validators {
+  position: fixed;
+  bottom: 12px;
+  left: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.validators img {
+  display: block;
+}
+
 h1 {
   margin: 0 0 8px;
   font-size: 1.7rem;
